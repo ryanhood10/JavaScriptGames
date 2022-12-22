@@ -1,0 +1,51 @@
+
+body {
+    margin: 0;
+}
+
+:root{
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size)*.9)
+}
+.board {
+    width: 100vw;
+    height: 100vh;
+    display:grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(3, auto);
+
+    visibility: hidden;
+}
+
+
+
+.cell { width: 100px;
+    height: 100px;
+    background-color: honeydew;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    position: relative;
+    
+
+}
+
+
+
+.cell.x::before,
+.cell.x::after{
+    content: '';
+    position: absolute;
+    width: calc(var(--mark-size)* .15);
+    height: var(--mark-size);
+    background-color: black;
+    transform: rotate(-45deg);
+
+}
+.cell.x::before{
+    transform: rotate(45deg);
+    background-color: black;
+}
